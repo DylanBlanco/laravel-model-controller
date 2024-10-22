@@ -3,11 +3,45 @@
 @section('page-title', 'Home')
 
 @section('main-content')
-<h1>
-    Laravel Start 1
-</h1>
+<main>
+    <div>
+        <div class="row">
+            @foreach ($movies as $item)
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h4>
+                                {{ $item->title }}
+                            </h4>
+                        
+                            <p>
+                                Titolo originale: 
+                                <h5>
+                                    {{ $item->original_title }}
+                                </h5>
+                            </p>
 
-<h2>
-    Ciao
-</h2>
+                            <p>
+                                nazione di origine:
+                                <b>
+                                    {{ $item->nationality }}
+                                </b>
+                            </p>
+
+                            <p>
+                                data uscita:
+                                {{ $item->date }}
+                            </p>
+
+                            <p>
+                                voto:
+                                {{ $item->vote }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</main>
 @endsection
